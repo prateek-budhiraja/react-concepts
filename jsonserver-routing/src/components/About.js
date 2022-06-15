@@ -6,7 +6,7 @@ const About = () => {
 			<h1>About</h1>
 			<h2>
 				This website provides information about the products. Please navigate to
-				the "<span className="productInternal">product</span>" page.
+				the <span className="productInternal">product</span> page.
 			</h2>
 		</div>
 	);
