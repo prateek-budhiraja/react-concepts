@@ -2,13 +2,13 @@
 	"products": [
 		{
 			"id": 101,
-			"prodName": "laptop",
+			"prodName": "Laptop",
 			"quantity": 10,
 			"price": 100000
 		},
 		{
 			"id": 102,
-			"prodName": "smartphone",
+			"prodName": "Smartphone",
 			"quantity": 40,
 			"price": 12000
 		},
@@ -20,13 +20,13 @@
 		},
 		{
 			"id": 104,
-			"prodName": "keybord",
+			"prodName": "Keybord",
 			"quantity": 15,
 			"price": 4000
 		},
 		{
 			"id": 105,
-			"prodName": "mouse",
+			"prodName": "Mouse",
 			"quantity": 50,
 			"price": 3000
 		}

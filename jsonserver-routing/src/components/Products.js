@@ -3,12 +3,10 @@ import Axios from "axios";
 import IndividualProduct from "./IndividualProduct";
 
 const Products = () => {
+	// creating state
 	const [products, setProducts] = useState([]);
 
-	const fetchDetails = async () => {
-		const response = await Axios.get("http://localhost:4000/products");
-		setProducts([...products, response.data]);
-	};
+	// getting data from json server
 	useEffect(() => {
 		async function fetchDetails() {
 			const response = await Axios.get("http://localhost:4000/products");

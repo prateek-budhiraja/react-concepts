@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from './App';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -14,6 +13,7 @@ import Products from "./components/Products";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<Router>
+		{/* Navigation links for routing with styling */}
 		<NavLink
 			activeClassName="active"
 			to="/"
@@ -40,6 +40,7 @@ root.render(
 		>
 			Products
 		</NavLink>
+		{/* Actual routes */}
 		<Switch>
 			<Route exact path="/" component={About} />
 			<Route path="/products" component={Products} />
