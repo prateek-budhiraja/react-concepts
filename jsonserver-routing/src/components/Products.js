@@ -1,22 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import IndividualProduct from "./IndividualProduct";
 
-class Products extends React.Component {
-	products = [];
-	constructor(props) {
-		super(props);
-		this.fetchDetails();
-	}
-	fetchDetails = async () => {
+const Products = () => {
+	const [products, setProducts] = useState([]);
+
+	const fetchDetails = async () => {
 		const response = await Axios.get("http://localhost:4000/products");
-		this.products = [...this.products, response.data];
+		setProducts([...products, response.data]);
 	};
-	render() {
-		return (
-			<div className="Products">
-				<h1>Products List</h1>
-			</div>
-		);
-	}
-}
+	useEffect(() => {
+		async function fetchDetails() {
+			const response = await Axios.get("http://localhost:4000/products");
+			setProducts(response.data);
+		}
+		fetchDetails();
+	}, []);
+
+	return (
+		<div className="Products">
+			<h1>Products List</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Product Name</th>
+						<th>Quantity</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					{products.map((item) => (
+						<IndividualProduct item={item} key={item["id"]} />
+					))}
+				</tbody>
+			</table>
+		</div>
+	);
+};
+
 export default Products;
