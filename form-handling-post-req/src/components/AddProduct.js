@@ -24,66 +24,77 @@ const AddProduct = () => {
 			<Formik
 				initialValues={{
 					id: uuid(),
-					// 	prodName: "",
-					// 	quantity: 0,
-					// 	price: 0,
+					prodName: "",
+					quantity: "",
+					price: "",
 				}}
 				validationSchema={ProductSchema}
-				onSubmit={(values) => {
-					// const value = JSON.stringify(values, null, 2);
+				onSubmit={(values, { resetForm }) => {
 					Axios.post("http://localhost:4000/products", values)
 						.then(function (response) {
 							console.log(response);
+							resetForm();
 						})
 						.catch(function (error) {
 							console.log(error);
 						});
 				}}
 			>
-				<Form>
-					<div className="inputproduct">
-						<div className="label" htmlFor="prodName">
-							Product Name
+				{({ handleChange, dirty }) => (
+					<Form>
+						<div className="inputproduct">
+							<div className="label" htmlFor="prodName">
+								Product Name
+							</div>
+							<Field
+								id="prodName"
+								name="prodName"
+								type="text"
+								className="field"
+								onChange={handleChange}
+							/>
+							<div className="invalid-input">
+								<ErrorMessage name="prodName" />
+							</div>
 						</div>
-						<Field
-							id="prodName"
-							name="prodName"
-							type="text"
-							className="field"
-						/>
-						<div className="invalid-input">
-							<ErrorMessage name="prodName" />
+						<br />
+						<div className="inputproduct">
+							<div className="label" htmlFor="quantity">
+								Quantity
+							</div>
+							<Field
+								id="quantity"
+								name="quantity"
+								type="number"
+								onChange={handleChange}
+								className="field"
+							/>
+							<div className="invalid-input">
+								<ErrorMessage name="quantity" />
+							</div>
 						</div>
-					</div>
-					<br />
-					<div className="inputproduct">
-						<div className="label" htmlFor="quantity">
-							Quantity
-						</div>
-						<Field
-							id="quantity"
-							name="quantity"
-							type="number"
-							className="field"
-						/>
-						<div className="invalid-input">
-							<ErrorMessage name="quantity" className="invalid-input" />
-						</div>
-					</div>
-					<br />
-					<div className="inputproduct">
-						<div className="label" htmlFor="price">
-							Price
-						</div>
-						<Field id="price" name="price" type="number" className="field" />
-					</div>
-					<div className="invalid-input">
-						<ErrorMessage name="price" className="invalid-input" />
-					</div>
-					<br />
+						<br />
+						<div className="inputproduct">
+							<div className="label" htmlFor="price">
+								Price
+							</div>
 
-					<button type="submit">Submit</button>
-				</Form>
+							<Field
+								id="price"
+								name="price"
+								type="number"
+								onChange={handleChange}
+								className="field"
+							/>
+						</div>
+						<div className="invalid-input">
+							<ErrorMessage name="price" />
+						</div>
+						<br />
+
+						<button type="submit">Submit</button>
+					</Form>
+				)}
 			</Formik>
 		</div>
 	);
