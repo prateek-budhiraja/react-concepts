@@ -1,0 +1,21 @@
+.About,
+.Products {
+  padding: 30px;
+}
+
+h1,
+.productInternal {
+  color: #02B290;
+}
+
+th,
+td {
+  text-align: center;
+  border: 1px solid white;
+  padding: 10px 20px;
+}
+
+thead {
+  font-size: larger;
+  color: #02B290;
+}
