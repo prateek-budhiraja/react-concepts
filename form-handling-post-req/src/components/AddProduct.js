@@ -2,8 +2,12 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { v4 as uuid } from "uuid";
 import * as Yup from "yup";
 import Axios from "axios";
+import { useState } from "react";
+import { Prompt } from "react-router-dom";
 
 const AddProduct = () => {
+	const [isBlocking, setIsBlocking] = useState(false);
+
 	const ProductSchema = Yup.object().shape({
 		prodName: Yup.string()
 			.min(3, "Product name must be greater than 3 characters")
@@ -34,14 +38,19 @@ const AddProduct = () => {
 						.then(function (response) {
 							console.log(response);
 							resetForm();
+							setIsBlocking(false);
 						})
 						.catch(function (error) {
 							console.log(error);
 						});
 				}}
 			>
-				{({ handleChange, dirty }) => (
+				{({ values, handleChange, dirty }) => (
 					<Form>
+						<Prompt
+							when={isBlocking}
+							message="Are you sure you want to leave this page?"
+						/>
 						<div className="inputproduct">
 							<div className="label" htmlFor="prodName">
 								Product Name
@@ -51,7 +60,11 @@ const AddProduct = () => {
 								name="prodName"
 								type="text"
 								className="field"
-								onChange={handleChange}
+								onChange={(e) => {
+									setIsBlocking(dirty);
+									handleChange(e);
+								}}
+								value={values.prodName}
 							/>
 							<div className="invalid-input">
 								<ErrorMessage name="prodName" />
@@ -66,7 +79,11 @@ const AddProduct = () => {
 								id="quantity"
 								name="quantity"
 								type="number"
-								onChange={handleChange}
+								onChange={(e) => {
+									setIsBlocking(dirty);
+									handleChange(e);
+								}}
+								value={values.quantity}
 								className="field"
 							/>
 							<div className="invalid-input">
@@ -83,7 +100,11 @@ const AddProduct = () => {
 								id="price"
 								name="price"
 								type="number"
-								onChange={handleChange}
+								onChange={(e) => {
+									setIsBlocking(dirty);
+									handleChange(e);
+								}}
+								value={values.price}
 								className="field"
 							/>
 						</div>
