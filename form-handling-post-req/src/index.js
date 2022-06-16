@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import About from "./components/About";
 import Products from "./components/Products";
+import AddProduct from "./components/AddProduct";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,6 +23,7 @@ root.render(
 				background: "#02B290",
 				padding: "10px",
 				borderRadius: "5px",
+				textDecoration: "none",
 				margin: "10px",
 			}}
 		>
@@ -36,6 +38,7 @@ root.render(
 				padding: "10px",
 				borderRadius: "5px",
 				margin: "10px",
+				textDecoration: "none",
 			}}
 		>
 			Products
@@ -44,6 +47,7 @@ root.render(
 		<Switch>
 			<Route exact path="/" component={About} />
 			<Route path="/products" component={Products} />
+			<Route path="/addproduct" component={AddProduct} />
 		</Switch>
 	</Router>
 );

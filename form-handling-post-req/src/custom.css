@@ -1,5 +1,6 @@
 .About,
-.Products {
+.Products,
+.addproduct {
   padding: 30px;
 }
 
@@ -18,4 +19,29 @@ td {
 thead {
   font-size: larger;
   color: #02B290;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #02B290;
+  color: #fff;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.inputproduct {
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+.field {
+  padding: 5px;
 }

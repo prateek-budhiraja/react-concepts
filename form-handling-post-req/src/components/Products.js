@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import IndividualProduct from "./IndividualProduct";
+import { Link } from "react-router-dom";
 
 const Products = () => {
 	// creating state
@@ -33,6 +34,9 @@ const Products = () => {
 					))}
 				</tbody>
 			</table>
+			<Link to="/addproduct">
+				<button>Add Product</button>
+			</Link>
 		</div>
 	);
 };
