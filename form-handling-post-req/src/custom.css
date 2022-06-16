@@ -33,15 +33,23 @@ button {
 }
 
 .inputproduct {
-  display: flex;
-  width: 350px;
-  justify-content: space-between;
+  display: grid;
 }
 
-label {
+.label {
+  color: #02B290;
+  display: inline;
   font-size: 1.2rem;
+  min-width: 100px;
 }
 
 .field {
-  padding: 5px;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.invalid-input {
+  color: #DE4839
 }
