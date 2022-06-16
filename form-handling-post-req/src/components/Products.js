@@ -22,7 +22,6 @@ const Products = () => {
 			<table>
 				<thead>
 					<tr>
-						<th>ID</th>
 						<th>Product Name</th>
 						<th>Quantity</th>
 						<th>Price</th>
