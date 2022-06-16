@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { v4 as uuid } from "uuid";
 import * as Yup from "yup";
+import Axios from "axios";
 
 const AddProduct = () => {
 	const ProductSchema = Yup.object().shape({
@@ -29,7 +30,14 @@ const AddProduct = () => {
 				}}
 				validationSchema={ProductSchema}
 				onSubmit={(values) => {
-					console.log(JSON.stringify(values, null, 2));
+					// const value = JSON.stringify(values, null, 2);
+					Axios.post("http://localhost:4000/products", values)
+						.then(function (response) {
+							console.log(response);
+						})
+						.catch(function (error) {
+							console.log(error);
+						});
 				}}
 			>
 				<Form>
