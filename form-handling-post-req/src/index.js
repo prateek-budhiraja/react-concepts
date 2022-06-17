@@ -11,6 +11,7 @@ import About from "./components/About";
 import Products from "./components/Products";
 import AddProduct from "./components/AddProduct";
 import ProductInfo from "./components/ProductInfo";
+import PageNotFound from "./components/PageNotFound";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -50,6 +51,7 @@ root.render(
 			<Route path="/products/:prodName" component={ProductInfo} />
 			<Route path="/products" component={Products} />
 			<Route path="/addproduct" component={AddProduct} />
+			<Route path="**" component={PageNotFound} />
 		</Switch>
 	</Router>
 );

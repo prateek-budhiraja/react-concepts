@@ -1,7 +1,8 @@
 .About,
 .Products,
 .addproduct,
-.ProductInfo {
+.ProductInfo,
+.PageNotFound {
   padding: 30px;
 }
 
