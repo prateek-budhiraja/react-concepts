@@ -6,8 +6,11 @@ import { useState } from "react";
 import { Prompt, useHistory } from "react-router-dom";
 
 const AddProduct = () => {
+	// isBlocking used in Prompt
 	const [isBlocking, setIsBlocking] = useState(false);
+	// used in go back button
 	const history = useHistory();
+	//YUP object for validation
 	const ProductSchema = Yup.object().shape({
 		prodName: Yup.string()
 			.min(3, "Product name must be greater than 3 characters")
@@ -25,6 +28,7 @@ const AddProduct = () => {
 	return (
 		<div className="addproduct">
 			<h1>Add a new Product</h1>
+			{/* formik implementation */}
 			<Formik
 				initialValues={{
 					id: uuid(),
@@ -32,7 +36,9 @@ const AddProduct = () => {
 					quantity: "",
 					price: "",
 				}}
+				// passing validation
 				validationSchema={ProductSchema}
+				// post values from form to json server
 				onSubmit={(values, { resetForm }) => {
 					Axios.post("http://localhost:4000/products", values)
 						.then(function (response) {
@@ -47,14 +53,17 @@ const AddProduct = () => {
 			>
 				{({ values, handleChange, dirty }) => (
 					<Form>
+						{/* Prompt if isBlocking is true */}
 						<Prompt
 							when={isBlocking}
 							message="Are you sure you want to leave this page?"
 						/>
+
 						<div className="inputproduct">
 							<div className="label" htmlFor="prodName">
 								Product Name
 							</div>
+							{/* set the form is dirty, enable blocking */}
 							<Field
 								id="prodName"
 								name="prodName"
@@ -71,6 +80,7 @@ const AddProduct = () => {
 							</div>
 						</div>
 						<br />
+
 						<div className="inputproduct">
 							<div className="label" htmlFor="quantity">
 								Quantity
@@ -86,6 +96,7 @@ const AddProduct = () => {
 								value={values.quantity}
 								className="field"
 							/>
+
 							<div className="invalid-input">
 								<ErrorMessage name="quantity" />
 							</div>
@@ -95,7 +106,6 @@ const AddProduct = () => {
 							<div className="label" htmlFor="price">
 								Price
 							</div>
-
 							<Field
 								id="price"
 								name="price"

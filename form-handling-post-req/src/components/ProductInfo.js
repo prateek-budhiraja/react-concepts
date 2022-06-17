@@ -1,9 +1,11 @@
 import { useHistory } from "react-router-dom";
 
-const ProductInfo = ({ match, location }) => {
+const ProductInfo = ({ match }) => {
+	// extracting route info from url
 	const {
 		params: { prodName },
 	} = match;
+	// useHistory to go back to previous page
 	const history = useHistory();
 	return (
 		<div className="ProductInfo">
