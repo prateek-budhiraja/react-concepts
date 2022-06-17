@@ -2,7 +2,8 @@
 .Products,
 .addproduct,
 .ProductInfo,
-.PageNotFound {
+.PageNotFound,
+.Error {
   padding: 30px;
 }
 

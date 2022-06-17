@@ -40,14 +40,15 @@ const AddProduct = () => {
 				validationSchema={ProductSchema}
 				// post values from form to json server
 				onSubmit={(values, { resetForm }) => {
+					setIsBlocking(false);
 					Axios.post("http://localhost:4000/products", values)
 						.then(function (response) {
 							console.log(response);
 							resetForm();
-							setIsBlocking(false);
 						})
 						.catch(function (error) {
 							console.log(error);
+							history.push("/error");
 						});
 				}}
 			>
