@@ -6,7 +6,6 @@ import { Link, Prompt } from "react-router-dom";
 const Products = () => {
 	// creating state
 	const [products, setProducts] = useState([]);
-
 	// getting data from json server
 	useEffect(() => {
 		async function fetchDetails() {
@@ -22,7 +21,9 @@ const Products = () => {
 			<table>
 				<Prompt
 					when={true}
-					message={"Are you sure you want to go to info page?"}
+					message={(loc) =>
+						`Are you sure you want to go to ${loc.pathname} page?`
+					}
 				/>
 				<thead>
 					<tr>
