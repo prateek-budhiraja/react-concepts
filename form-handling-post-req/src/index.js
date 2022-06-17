@@ -10,6 +10,7 @@ import {
 import About from "./components/About";
 import Products from "./components/Products";
 import AddProduct from "./components/AddProduct";
+import ProductInfo from "./components/ProductInfo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -46,6 +47,7 @@ root.render(
 		{/* Actual routes */}
 		<Switch>
 			<Route exact path="/" component={About} />
+			<Route path="/products/:prodName" component={ProductInfo} />
 			<Route path="/products" component={Products} />
 			<Route path="/addproduct" component={AddProduct} />
 		</Switch>

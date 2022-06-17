@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import IndividualProduct from "./IndividualProduct";
-import { Link } from "react-router-dom";
+import { Link, Prompt } from "react-router-dom";
 
 const Products = () => {
 	// creating state
@@ -20,6 +20,10 @@ const Products = () => {
 		<div className="Products">
 			<h1>Products List</h1>
 			<table>
+				<Prompt
+					when={true}
+					message={"Are you sure you want to go to info page?"}
+				/>
 				<thead>
 					<tr>
 						<th>Product Name</th>

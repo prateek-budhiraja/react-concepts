@@ -1,3 +1,16 @@
 {
-	"products": []
+  "products": [
+    {
+      "id": "b8aad54f-ae5d-4f2a-8193-1e0c017a5263",
+      "prodName": "Laptop",
+      "quantity": 1,
+      "price": 999
+    },
+    {
+      "id": "fb652a18-a034-41b8-aaf3-edc7df8db6ac",
+      "prodName": "Something with spaces",
+      "quantity": 1,
+      "price": 22
+    }
+  ]
 }

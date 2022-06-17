@@ -1,6 +1,7 @@
 .About,
 .Products,
-.addproduct {
+.addproduct,
+.ProductInfo {
   padding: 30px;
 }
 
@@ -52,4 +53,10 @@ button {
 
 .invalid-input {
   color: #DE4839
+}
+
+.prodLink {
+  color: #fdaea7;
+  text-decoration: underline;
+  cursor: pointer;
 }
