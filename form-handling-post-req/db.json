@@ -4,25 +4,31 @@
       "id": "b8aad54f-ae5d-4f2a-8193-1e0c017a5263",
       "prodName": "Laptop",
       "quantity": 1,
-      "price": 999
-    },
-    {
-      "id": "fb652a18-a034-41b8-aaf3-edc7df8db6ac",
-      "prodName": "Something with spaces",
-      "quantity": 1,
-      "price": 22
+      "price": 50000
     },
     {
       "id": "69b066cf-0164-49bc-befc-228002833c8a",
       "prodName": "Smartphones",
       "quantity": 11,
-      "price": 22
+      "price": 20000
     },
     {
       "id": "a0ba0cfd-a177-449c-b619-3c4c12ccab05",
       "prodName": "Speakers",
       "quantity": 4,
-      "price": 599
+      "price": 5000
+    },
+    {
+      "id": "a12c4aa4-b037-4fb6-bf94-08dc41d7e057",
+      "prodName": "Watch",
+      "quantity": 5,
+      "price": 1000
+    },
+    {
+      "id": "f0a49533-514e-4f70-88ee-88e5836cf137",
+      "prodName": "Mouse",
+      "quantity": 4,
+      "price": 600
     }
   ]
 }

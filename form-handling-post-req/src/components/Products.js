@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import IndividualProduct from "./IndividualProduct";
 import { Link, Prompt } from "react-router-dom";
+import ProductContext from "./ProductContext";
+import ProductList from "./ProductList";
 
 const Products = () => {
 	// creating state
 	const [products, setProducts] = useState([]);
+
 	// getting data from json server when the page loads
 	useEffect(() => {
 		async function fetchDetails() {
@@ -26,21 +28,11 @@ const Products = () => {
 						`Are you sure you want to go to ${loc.pathname} page?`
 					}
 				/>
-				{/* prints table */}
-				<thead>
-					<tr>
-						<th>Product Name</th>
-						<th>Quantity</th>
-						<th>Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					{products.map((item) => (
-						<IndividualProduct item={item} key={item["id"]} />
-					))}
-				</tbody>
+				<ProductContext.Provider value={products}>
+					<ProductList />
+				</ProductContext.Provider>
 			</table>
-			{/* Takes to add product page */}
+			{/* Button to add product page */}
 			<Link to="/addproduct">
 				<button>Add Product</button>
 			</Link>
