@@ -3,11 +3,11 @@ import { v4 as uuid } from "uuid";
 import * as Yup from "yup";
 import Axios from "axios";
 import { useState } from "react";
-import { Prompt } from "react-router-dom";
+import { Prompt, useHistory } from "react-router-dom";
 
 const AddProduct = () => {
 	const [isBlocking, setIsBlocking] = useState(false);
-
+	const history = useHistory();
 	const ProductSchema = Yup.object().shape({
 		prodName: Yup.string()
 			.min(3, "Product name must be greater than 3 characters")
@@ -114,6 +114,7 @@ const AddProduct = () => {
 						<br />
 
 						<button type="submit">Submit</button>
+						<button onClick={history.goBack}>Back</button>
 					</Form>
 				)}
 			</Formik>

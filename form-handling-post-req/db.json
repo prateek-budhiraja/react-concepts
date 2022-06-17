@@ -11,6 +11,18 @@
       "prodName": "Something with spaces",
       "quantity": 1,
       "price": 22
+    },
+    {
+      "id": "69b066cf-0164-49bc-befc-228002833c8a",
+      "prodName": "Smartphones",
+      "quantity": 11,
+      "price": 22
+    },
+    {
+      "id": "a0ba0cfd-a177-449c-b619-3c4c12ccab05",
+      "prodName": "Speakers",
+      "quantity": 4,
+      "price": 599
     }
   ]
 }
