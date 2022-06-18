@@ -8,11 +8,13 @@ import Home from "./components/Home";
 import Products from "./components/products/Products";
 import PageNotFound from "./components/PageNotFound";
 import Profile from "./components/Profile";
+import Test from "./components/Test";
 
 function App() {
 	return (
 		<Router>
 			<NavBar />
+			{/* <Test /> */}
 			<Switch>
 				<Route exact path="/" component={Home} />
 				<Route path="/about" component={About} />
