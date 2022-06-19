@@ -2,6 +2,7 @@ body {
   background-color: #b3e0ff;
 }
 
+/* home page css start */
 .home {
   margin: 0px;
   padding: 0px;
@@ -13,15 +14,11 @@ img {
   margin-right: auto;
 }
 
-.home-text {
-  display: flex;
-  align-items: center;
-}
-
 .home-content {
   margin-top: 20%;
 }
 
+/* media query for home page */
 @media (max-width: 768px) {
   img {
     display: none;
@@ -32,7 +29,12 @@ img {
   }
 }
 
-.break {
-  width: 100%;
-  height: 0;
+/* home page css ends */
+
+/* about page css */
+.about {
+  text-align: justify;
+  padding: 30px;
 }
+
+/* about page css ends */
