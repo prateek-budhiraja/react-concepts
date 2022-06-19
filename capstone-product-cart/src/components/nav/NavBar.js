@@ -8,7 +8,7 @@ const NavBar = () => {
 	const [open, setOpen] = useState(false);
 	const checkLogin = useContext(isLoggedIn);
 	return (
-		<Navbar color="dark" expand="md" dark className="fs-4">
+		<Navbar color="dark" expand="md" dark className="fs-5">
 			<IndividualNavLink
 				label={"📥 Super Store"}
 				route={"/"}
@@ -73,26 +73,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-{
-	/* <>
-				<IndividualNavLink label={"About"} route={"/about"} />
-				<IndividualNavLink label={"Products"} route={"/products"} />
-			</>
-			<>
-				{checkLogin ? (
-					<>
-						<IndividualNavLink label={"Profile"} route={"/profile"} />
-						<IndividualNavLink label={"Logout"} route={"/logout"} />
-					</>
-				) : (
-					<>
-						<IndividualNavLink label={"Sign Up"} route={"/signup"} />
-						<IndividualNavLink label={"Sign In"} route={"/signin"} />
-					</>
-				)}
-			</> */
-}
-{
-	/* </div> */
-}
