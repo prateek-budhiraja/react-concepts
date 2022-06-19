@@ -24,7 +24,8 @@ const SignUp = () => {
 			.min(3, "Last Name must be greater than 2 characters"),
 		phoneNum: Yup.string()
 			.required("Phone number is required")
-			.phone("IN", "Phone number should be 10 digits long"),
+			.min(10, "Phone number should be 10 digits long")
+			.max(10, "Phone number should be 10 digits long"),
 		password: Yup.string()
 			.required("Password is required")
 			.min(5, "Password must be minimum 5 characters long"),
