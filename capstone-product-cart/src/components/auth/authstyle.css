@@ -8,8 +8,6 @@
 }
 
 .signup-form {
-  /* display: inline-block; */
-  /* width: 100%; */
   text-align: left;
 }
 
@@ -17,4 +15,10 @@
   color: #FF6263;
   font-size: small;
   text-align: left;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  margin-bottom: 30px;
 }

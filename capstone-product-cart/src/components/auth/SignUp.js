@@ -34,7 +34,7 @@ const SignUp = () => {
 	});
 	return (
 		<div className="signup-form-wrapper  col-lg-8 col-md-8 col-10 mt-5 mb-5 p-5">
-			<h1>Create a new account</h1>
+			<h1 className="text-success">Create a Super Store Account</h1>
 
 			{/* formik implementation */}
 			<Formik
@@ -198,7 +198,11 @@ const SignUp = () => {
 							</div>
 						</div>
 						<br />
-						<Button color="primary">Register</Button>
+						<div className="p-3">
+							<Button color="success" block>
+								SIGN UP
+							</Button>
+						</div>
 						{/* <button onClick={history.goBack}>Back</button> */}
 					</Form>
 				)}
