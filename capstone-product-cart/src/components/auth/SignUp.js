@@ -33,7 +33,7 @@ const SignUp = () => {
 			.oneOf([Yup.ref("password"), null], "Passwords must match"),
 	});
 	return (
-		<div className="signup-form-wrapper  col-lg-8 col-md-8 col-10 mt-5 mb-5 p-5">
+		<div className="auth-form-wrapper  col-lg-8 col-md-8 col-10 mt-5 mb-5 p-5">
 			<h1 className="text-success">Create a Super Store Account</h1>
 
 			{/* formik implementation */}
@@ -70,7 +70,7 @@ const SignUp = () => {
 							when={isBlocking}
 							message="Are you sure you want to leave this page?"
 						/>
-						<div className="signup-form">
+						<div className="auth-form">
 							<div className="p-3">
 								<div className="fs-5" htmlFor="firstName">
 									First Name
@@ -197,13 +197,11 @@ const SignUp = () => {
 								</div>
 							</div>
 						</div>
-						<br />
 						<div className="p-3">
 							<Button color="success" block>
 								SIGN UP
 							</Button>
 						</div>
-						{/* <button onClick={history.goBack}>Back</button> */}
 					</Form>
 				)}
 			</Formik>

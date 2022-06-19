@@ -1,4 +1,4 @@
-.signup-form-wrapper {
+.auth-form-wrapper {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -7,8 +7,9 @@
   border-radius: 10px;
 }
 
-.signup-form {
+.auth-form {
   text-align: left;
+  margin-top: 30px;
 }
 
 .invalid-input {
@@ -20,5 +21,10 @@
 h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: normal;
-  margin-bottom: 30px;
+}
+
+h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+  /* font-size: small; */
 }
