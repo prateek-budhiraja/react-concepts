@@ -1,5 +1,12 @@
 import { useContext, useState } from "react";
-import { Navbar, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap";
+import {
+	Navbar,
+	Nav,
+	NavItem,
+	NavbarToggler,
+	Collapse,
+	NavbarBrand,
+} from "reactstrap";
 import isLoggedIn from "../context/isLoggedIn";
 import IndividualNavLink from "./IndividualNavLink";
 import "./navstyle.css";
@@ -9,11 +16,13 @@ const NavBar = () => {
 	const checkLogin = useContext(isLoggedIn);
 	return (
 		<Navbar color="dark" expand="md" dark className="fs-5">
-			<IndividualNavLink
-				label={"📥 Super Store"}
-				route={"/"}
-				isButton={false}
-			/>
+			<NavbarBrand onClick={() => setOpen(false)}>
+				<IndividualNavLink
+					label={"📥 Super Store"}
+					route={"/"}
+					isButton={false}
+				/>
+			</NavbarBrand>
 			<NavbarToggler color="light" onClick={() => setOpen(!open)} />
 			<Collapse navbar isOpen={open} className="collapse-menu">
 				<Nav navbar className="ms-auto">
