@@ -13,7 +13,7 @@ const IndividualNavLink = ({ label, route, isButton }) => {
 			}}
 		>
 			{isButton ? (
-				<Button color={label === "Log Out" ? "danger" : "warning"} outline>
+				<Button color={label === "Log Out" ? "danger" : "success"} outline>
 					{label}
 				</Button>
 			) : (
