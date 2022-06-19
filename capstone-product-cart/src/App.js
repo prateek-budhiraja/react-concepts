@@ -11,6 +11,7 @@ import Products from "./components/products/Products";
 import PageNotFound from "./components/static-pages/PageNotFound";
 import Profile from "./components/static-pages/Profile";
 import SignUp from "./components/auth/SignUp";
+import SignIn from "./components/auth/SignIn";
 // import Test from "./components/Test";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 				<Route path="/products" component={Products} />
 				<Route path="/profile" component={Profile} />
 				<Route path="/signup" component={SignUp} />
+				<Route path="/signin" component={SignIn} />
 				<Route path="*" component={PageNotFound} />
 			</Switch>
 		</Router>
