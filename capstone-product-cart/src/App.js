@@ -3,12 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/nav/NavBar";
-import About from "./components/About";
-import Home from "./components/Home";
+import About from "./components/static-pages/About";
+import Home from "./components/static-pages/Home";
 import Products from "./components/products/Products";
-import PageNotFound from "./components/PageNotFound";
-import Profile from "./components/Profile";
-import Test from "./components/Test";
+import PageNotFound from "./components/static-pages/PageNotFound";
+import Profile from "./components/static-pages/Profile";
+// import Test from "./components/Test";
 
 function App() {
 	return (
