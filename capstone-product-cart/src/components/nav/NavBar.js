@@ -17,14 +17,14 @@ const NavBar = () => {
 			<NavbarToggler color="light" onClick={() => setOpen(!open)} />
 			<Collapse navbar isOpen={open} className="collapse-menu">
 				<Nav navbar className="ms-auto">
-					<NavItem className="nav-item">
+					<NavItem className="nav-item" onClick={() => setOpen(false)}>
 						<IndividualNavLink
 							label={"About"}
 							route={"/about"}
 							isButton={false}
 						/>
 					</NavItem>
-					<NavItem className="nav-item">
+					<NavItem className="nav-item" onClick={() => setOpen(false)}>
 						<IndividualNavLink
 							label={"Products"}
 							route={"/products"}
@@ -33,14 +33,14 @@ const NavBar = () => {
 					</NavItem>
 					{checkLogin ? (
 						<>
-							<NavItem className="nav-item">
+							<NavItem className="nav-item" onClick={() => setOpen(false)}>
 								<IndividualNavLink
 									label={"Profile"}
 									route={"/profile"}
 									isButton={true}
 								/>
 							</NavItem>
-							<NavItem className="nav-item">
+							<NavItem className="nav-item" onClick={() => setOpen(false)}>
 								<IndividualNavLink
 									label={"Log Out"}
 									route={"/logout"}
@@ -50,14 +50,14 @@ const NavBar = () => {
 						</>
 					) : (
 						<>
-							<NavItem className="nav-item">
+							<NavItem className="nav-item" onClick={() => setOpen(false)}>
 								<IndividualNavLink
 									label={"Sign Up"}
 									route={"/signup"}
 									isButton={true}
 								/>
 							</NavItem>
-							<NavItem className="nav-item">
+							<NavItem className="nav-item" onClick={() => setOpen(false)}>
 								<IndividualNavLink
 									label={"Sign In"}
 									route={"/signin"}
