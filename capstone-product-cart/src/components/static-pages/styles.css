@@ -1,0 +1,38 @@
+body {
+  background-color: #b3e0ff;
+}
+
+.home {
+  margin: 0px;
+  padding: 0px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-text {
+  display: flex;
+  align-items: center;
+}
+
+.home-content {
+  margin-top: 20%;
+}
+
+@media (max-width: 768px) {
+  img {
+    display: none;
+  }
+
+  .home-content {
+    margin-top: 50%;
+  }
+}
+
+.break {
+  width: 100%;
+  height: 0;
+}
