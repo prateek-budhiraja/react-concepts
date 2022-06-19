@@ -73,7 +73,7 @@ const SignUp = () => {
 						<div className="signup-form">
 							<div className="p-3">
 								<div className="fs-5" htmlFor="firstName">
-									First Name :
+									First Name
 								</div>
 								{/* set the form is dirty, enable blocking */}
 								<Field
@@ -94,7 +94,7 @@ const SignUp = () => {
 							</div>
 							<div className="p-3">
 								<div className="fs-5" htmlFor="lastName">
-									Last Name :
+									Last Name
 								</div>
 								{/* set the form is dirty, enable blocking */}
 								<Field
@@ -115,7 +115,7 @@ const SignUp = () => {
 							</div>
 							<div className="p-3">
 								<div className="fs-5" htmlFor="emailID">
-									Email ID :
+									Email ID
 								</div>
 								{/* set the form is dirty, enable blocking */}
 								<Field
@@ -136,7 +136,7 @@ const SignUp = () => {
 							</div>
 							<div className="p-3">
 								<div className="fs-5" htmlFor="phoneNum">
-									Phone Number :
+									Phone Number
 								</div>
 								<Field
 									id="phoneNum"
@@ -157,7 +157,7 @@ const SignUp = () => {
 							</div>
 							<div className="p-3">
 								<div className="fs-5" htmlFor="password">
-									Password :
+									Password
 								</div>
 								<Field
 									id="password"
@@ -178,7 +178,7 @@ const SignUp = () => {
 
 							<div className="p-3">
 								<div className="fs-5" htmlFor="confirmPassword">
-									Confirm Password :
+									Confirm Password
 								</div>
 								<Field
 									id="confirmPassword"
