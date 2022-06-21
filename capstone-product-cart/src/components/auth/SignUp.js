@@ -1,8 +1,11 @@
 import { Formik, ErrorMessage, Form, Field } from "formik";
 import * as Yup from "yup";
-import "yup-phone";
+// import "yup-phone";
 import { v4 as uuid } from "uuid";
 import { useState } from "react";
+
+import Axios from "axios";
+
 // import { Form } from "reactstrap";
 import { Prompt } from "react-router-dom";
 
@@ -40,7 +43,6 @@ const SignUp = () => {
 			{/* formik implementation */}
 			<Formik
 				initialValues={{
-					id: uuid(),
 					firstName: "",
 					lastName: "",
 					emailID: "",
@@ -51,18 +53,22 @@ const SignUp = () => {
 				// passing validation
 				validationSchema={SignUpValidations}
 				// post values from form to json server
-				// onSubmit={(values, { resetForm }) => {
-				// 	setIsBlocking(false);
-				// 	Axios.post("http://localhost:4000/products", values)
-				// 		.then(function (response) {
-				// 			console.log(response);
-				// 			resetForm();
-				// 		})
-				// 		.catch(function (error) {
-				// 			console.log(error);
-				// 			history.push("/error");
-				// 		});
-				// }}
+				onSubmit={(values, { resetForm }) => {
+					values.id = uuid();
+					setIsBlocking(false);
+					Axios.post("http://localhost:4000/login", values)
+						.then(function (response) {
+							console.log(response);
+							resetForm();
+						})
+						.catch(function (error) {
+							console.log(error.response.data);
+							// resetForm();
+
+							// history.push("/error");
+							// console.log(values);
+						});
+				}}
 			>
 				{({ values, handleChange, dirty }) => (
 					<Form>
@@ -123,7 +129,6 @@ const SignUp = () => {
 									id="emailID"
 									name="emailID"
 									type="text"
-									// className="field"
 									onChange={(e) => {
 										setIsBlocking(dirty);
 										handleChange(e);
@@ -199,7 +204,7 @@ const SignUp = () => {
 							</div>
 						</div>
 						<div className="p-3">
-							<Button color="success" block>
+							<Button color="success" block type="submit">
 								SIGN UP
 							</Button>
 						</div>
