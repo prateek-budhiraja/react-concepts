@@ -7,12 +7,13 @@ import { useState } from "react";
 import Axios from "axios";
 
 // import { Form } from "reactstrap";
-import { Prompt } from "react-router-dom";
+import { Prompt, useHistory } from "react-router-dom";
 
 import "./authstyle.css";
 import { Button } from "reactstrap";
 
 const SignUp = () => {
+	const history = useHistory();
 	const [isBlocking, setIsBlocking] = useState(false);
 	//YUP object for validation
 	const SignUpValidations = Yup.object().shape({
@@ -63,10 +64,8 @@ const SignUp = () => {
 						})
 						.catch(function (error) {
 							console.log(error.response.data);
-							// resetForm();
-
-							// history.push("/error");
-							// console.log(values);
+							resetForm();
+							history.push("/error");
 						});
 				}}
 			>

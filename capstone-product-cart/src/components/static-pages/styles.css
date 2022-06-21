@@ -37,4 +37,17 @@ img {
   padding: 30px;
 }
 
+.about p {
+  font-size: 1.3rem;
+}
+
 /* about page css ends */
+
+/* error page css */
+.oops {
+  height: 90vh;
+}
+
+.oops h1 {
+  align-self: center;
+}

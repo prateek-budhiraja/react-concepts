@@ -14,13 +14,16 @@ import SignUp from "./components/auth/SignUp";
 import SignIn from "./components/auth/SignIn";
 import LogOut from "./components/auth/LogOut";
 import UserContext from "./components/context/UserContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import Error from "./components/static-pages/Error";
 // import Test from "./components/Test";
 
 function App() {
 	// const { isLoggedIn } = useContext(UserContext);
 
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [isLoggedIn, setIsLoggedIn] = useState();
+
+	useEffect(() => setIsLoggedIn(false), []);
 
 	return (
 		<Router>
@@ -35,6 +38,7 @@ function App() {
 					<Route path="/signup" component={SignUp} />
 					<Route path="/signin" component={SignIn} />
 					<Route path="/logout" component={LogOut} />
+					<Route path="/error" component={Error} />
 					<Route path="*" component={PageNotFound} />
 				</Switch>
 			</UserContext.Provider>
