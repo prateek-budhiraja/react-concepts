@@ -7,13 +7,13 @@ import {
 	Collapse,
 	NavbarBrand,
 } from "reactstrap";
-import isLoggedIn from "../context/isLoggedIn";
+import UserContext from "../context/UserContext";
 import IndividualNavLink from "./IndividualNavLink";
 import "./navstyle.css";
 
 const NavBar = () => {
 	const [open, setOpen] = useState(false);
-	const checkLogin = useContext(isLoggedIn);
+	const { isLoggedIn } = useContext(UserContext);
 	return (
 		<Navbar color="dark" expand="md" dark className="fs-5">
 			<NavbarBrand onClick={() => setOpen(false)}>
@@ -40,7 +40,7 @@ const NavBar = () => {
 							isButton={false}
 						/>
 					</NavItem>
-					{checkLogin ? (
+					{isLoggedIn ? (
 						<>
 							<NavItem className="nav-item" onClick={() => setOpen(false)}>
 								<IndividualNavLink

@@ -12,22 +12,32 @@ import PageNotFound from "./components/static-pages/PageNotFound";
 import Profile from "./components/static-pages/Profile";
 import SignUp from "./components/auth/SignUp";
 import SignIn from "./components/auth/SignIn";
+import LogOut from "./components/auth/LogOut";
+import UserContext from "./components/context/UserContext";
+import { useContext, useState } from "react";
 // import Test from "./components/Test";
 
 function App() {
+	// const { isLoggedIn } = useContext(UserContext);
+
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
+
 	return (
 		<Router>
-			<NavBar />
-			{/* <Test /> */}
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route path="/about" component={About} />
-				<Route path="/products" component={Products} />
-				<Route path="/profile" component={Profile} />
-				<Route path="/signup" component={SignUp} />
-				<Route path="/signin" component={SignIn} />
-				<Route path="*" component={PageNotFound} />
-			</Switch>
+			<UserContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+				<NavBar />
+				{/* <Test /> */}
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route path="/about" component={About} />
+					<Route path="/products" component={Products} />
+					<Route path="/profile" component={Profile} />
+					<Route path="/signup" component={SignUp} />
+					<Route path="/signin" component={SignIn} />
+					<Route path="/logout" component={LogOut} />
+					<Route path="*" component={PageNotFound} />
+				</Switch>
+			</UserContext.Provider>
 		</Router>
 	);
 }

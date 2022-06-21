@@ -28,3 +28,48 @@ h4 {
   font-weight: lighter;
   /* font-size: small; */
 }
+
+
+
+/* Logout page css starts */
+
+.logout-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: 1;
+  place-content: center;
+  color: white;
+  display: none;
+  animation: overlay 3s forwards;
+}
+
+.true {
+  display: grid;
+}
+
+.false {
+  display: none;
+}
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+    ;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Logout page css ends */
