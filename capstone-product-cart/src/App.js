@@ -23,7 +23,7 @@ function App() {
 
 	const [isLoggedIn, setIsLoggedIn] = useState();
 
-	useEffect(() => setIsLoggedIn(false), []);
+	useEffect(() => setIsLoggedIn(true), []);
 
 	return (
 		<Router>

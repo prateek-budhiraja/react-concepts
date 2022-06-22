@@ -10,9 +10,9 @@ const LogOut = () => {
 	useEffect(() => {
 		setOverlay(true);
 		setTimeout(() => {
-			setOverlay(false);
-			setIsLoggedIn(false);
 			history.push("/");
+			setIsLoggedIn(false);
+			setOverlay(false);
 		}, 3000);
 	}, []);
 
